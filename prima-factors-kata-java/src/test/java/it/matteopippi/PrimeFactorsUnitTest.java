@@ -45,6 +45,29 @@ public class PrimeFactorsUnitTest {
         assertTrue(primeFactors.contains(3));
     }
 
+    @Test
+    void verifyFactorsOfTwelve() {
+        List<Integer> primeFactors = primeFactor.find(12);
+        assertEquals(3, primeFactors.size());
+        assertTrue(primeFactors.contains(3));
+        assertTrue(primeFactors.contains(2));
+    }
+    @Test
+    void verifyFactorsOfFifteen() {
+        List<Integer> primeFactors = primeFactor.find(15);
+        assertEquals(2, primeFactors.size());
+        assertTrue(primeFactors.contains(3));
+        assertTrue(primeFactors.contains(5));
+    }
+
+    @Test
+    void verifyFactorsOfTwentyEight() {
+        List<Integer> primeFactors = primeFactor.find(28);
+        assertEquals(3, primeFactors.size());
+        assertTrue(primeFactors.contains(2));
+        assertTrue(primeFactors.contains(7));
+    }
+
     private static class PrimeFactor {
 
         public List<Integer> find(int i) {
