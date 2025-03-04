@@ -9,11 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PrimeFactorsUnitTest {
 
+    PrimeFactor primeFactor = new PrimeFactor();
 
     @Test
     void verifyPrimeFactorsTwoIsTwo() {
-        PrimeFactor primeFactor = new PrimeFactor();
-
         List<Integer> factors = primeFactor.find(2);
 
         assertEquals(1, factors.size());
@@ -22,9 +21,8 @@ public class PrimeFactorsUnitTest {
 
     @Test
     void verifyPrimeFactorThreeIsThree() {
-        PrimeFactor primeFactor = new PrimeFactor();
-
         List<Integer> factors = primeFactor.find(3);
+
         assertEquals(1, factors.size());
         assertTrue(factors.contains(3));
     }
