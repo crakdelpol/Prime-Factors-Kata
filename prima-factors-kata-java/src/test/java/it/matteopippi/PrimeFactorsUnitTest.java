@@ -37,7 +37,13 @@ public class PrimeFactorsUnitTest {
         assertTrue(factors.contains(2));
     }
 
-
+    @Test
+    void verifyFactorsSixIsTwoAndThree() {
+        List<Integer> primeFactors = primeFactor.find(6);
+        assertEquals(2, primeFactors.size());
+        assertTrue(primeFactors.contains(2));
+        assertTrue(primeFactors.contains(3));
+    }
 
     private static class PrimeFactor {
 
