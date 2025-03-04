@@ -2,6 +2,7 @@ package it.matteopippi;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,13 +28,28 @@ public class PrimeFactorsUnitTest {
         assertTrue(factors.contains(3));
     }
 
-    private class PrimeFactor {
+    @Test
+    void verifyPrimeFourIsTwo() {
+
+        List<Integer> factors = primeFactor.find(4);
+
+        assertEquals(2, factors.size());
+        assertTrue(factors.contains(2));
+    }
+
+
+
+    private static class PrimeFactor {
 
         public List<Integer> find(int i) {
-            if(i == 2){
-                return Arrays.asList(2);
+            List<Integer> factors = new ArrayList<Integer>();
+            for (int divisor = 2; i > 1; divisor++) {
+                while (i % divisor == 0) {
+                    factors.add(divisor);
+                    i /= divisor;
+                }
             }
-            return Arrays.asList(3);
+            return factors;
         }
     }
 }
