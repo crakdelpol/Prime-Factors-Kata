@@ -3,10 +3,10 @@ package it.matteopippi;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PrimeFactorsUnitTest {
 
@@ -71,7 +71,7 @@ public class PrimeFactorsUnitTest {
     private static class PrimeFactor {
 
         public List<Integer> find(int i) {
-            List<Integer> factors = new ArrayList<Integer>();
+            List<Integer> factors = new ArrayList<>();
             for (int divisor = 2; i > 1; divisor++) {
                 while (i % divisor == 0) {
                     factors.add(divisor);
